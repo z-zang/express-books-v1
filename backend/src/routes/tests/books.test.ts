@@ -5,14 +5,6 @@ import { errorMsg } from "../books.ts";
 import { TBook } from "../../types/types.ts";
 import { books } from "../../../data.ts";
 
-// let books: TBook[];
-
-// reread data from saved file before each test 
-// beforeEach(() => {
-//     jest.resetModules();
-//     books = require('../../../data.ts').books
-// })
-
 afterAll((done) => {
     server.close(done)
 });
@@ -25,7 +17,7 @@ describe('GET /api/books', () => {
     });
 });
 
-// Todo - see v2 for real database tests
+// see v2 for real database tests
 describe('GET /api/books?queryParams', () => {
     it('responds with json for all books', async () => {
     });
@@ -100,7 +92,6 @@ describe('POST /api/books', () => {
 
 // TODO: note: this now has 11 items after the post request from previous test
 // not sure if this is good testing solution?
-
 describe('DELETE /api/books/:id', () => {
     describe('responds with remaining books if valid id', () => {
         it('1', async () => {
